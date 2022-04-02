@@ -1,17 +1,9 @@
 import styles from "../styles/styles.module.css";
 import noImage from "../assets/no-image.jpg";
-
-import { useState } from "react";
+import { useProducts } from "../hooks/useProducts";
 
 const ProductCard = () => {
-  const [counter, setCounter] = useState(0);
-
-  // Handler Functions
-  const increaseBy = (value: number) => {
-    // Here the Math.max If the Values goes down zero the Math.max will return my counter to be zero meaning that the counter will never go under zero.
-    setCounter((prev) => Math.max(prev + value, 0));
-  };
-
+  const { counter, increaseBy } = useProducts();
   console.log(styles);
   return (
     <div className={styles.productCard}>

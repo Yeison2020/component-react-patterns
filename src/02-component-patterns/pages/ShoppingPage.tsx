@@ -1,5 +1,9 @@
 import React from "react";
 import ProductCard from "../components/ProductCard";
+const products = {
+  id: "1",
+  title: "Coffee Mug Card",
+};
 
 const ShoppingPage = () => {
   //Implementing Inline Styles review Notes CamelCase for name of the properties
@@ -9,10 +13,7 @@ const ShoppingPage = () => {
       <hr />
 
       <div style={{ display: "flex", flexDirection: "row", flexWrap: "wrap" }}>
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
+        <ProductCard product={products} />
       </div>
     </div>
   );

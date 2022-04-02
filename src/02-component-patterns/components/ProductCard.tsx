@@ -2,7 +2,16 @@ import styles from "../styles/styles.module.css";
 import noImage from "../assets/no-image.jpg";
 import { useProducts } from "../hooks/useProducts";
 
-const ProductCard = () => {
+// Implementing my Types:
+interface Props {
+  product: Product;
+}
+interface Product {
+  id: string;
+  title: string;
+  img?: string;
+}
+const ProductCard = ({ product }: Props) => {
   // Customs Hooks Imports
   const { counter, increaseBy } = useProducts();
 
@@ -13,10 +22,9 @@ const ProductCard = () => {
       {/* Because I put the Image inside of the public foler I was abale to fecth just like this ==>  */}
       <img
         className={styles.productImg}
-        src="./coffee-mug.png"
+        src={product.img ? product.img : noImage}
         alt="coffee Mug"
       />
-      {/* <img className={styles.productImg} src={noImage} alt="coffee Mug" /> */}
       <span className={styles.productDescription}>Coffee Mug</span>
       <div className={styles.buttonsContainer}>
         <button className={styles.buttonMinus} onClick={() => increaseBy(-1)}>

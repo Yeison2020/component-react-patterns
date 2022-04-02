@@ -3,7 +3,10 @@ import noImage from "../assets/no-image.jpg";
 import { useProducts } from "../hooks/useProducts";
 
 const ProductCard = () => {
+  // Customs Hooks Imports
   const { counter, increaseBy } = useProducts();
+
+  //
   console.log(styles);
   return (
     <div className={styles.productCard}>

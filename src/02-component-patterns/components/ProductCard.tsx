@@ -25,7 +25,7 @@ const ProductCard = ({ product }: Props) => {
         src={product.img ? product.img : noImage}
         alt="coffee Mug"
       />
-      <span className={styles.productDescription}>Coffee Mug</span>
+      <span className={styles.productDescription}>{product.title}</span>
       <div className={styles.buttonsContainer}>
         <button className={styles.buttonMinus} onClick={() => increaseBy(-1)}>
           -

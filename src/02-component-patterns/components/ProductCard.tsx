@@ -61,10 +61,12 @@ const ProductCard = ({ product }: Props) => {
   const { counter, increaseBy } = useProducts();
 
   //
-  console.log(styles);
+  // console.log(styles);
   return (
     <div className={styles.productCard}>
       {/* Because I put the Image inside of the public foler I was abale to fecth just like this ==>  */}
+
+      {/* Please Learn this is The best way to implement Them */}
       <ProductImage img={product.img} />
       <ProductTitle title={product.title} />
       <ProductButtons counter={counter} increaseBy={increaseBy} />

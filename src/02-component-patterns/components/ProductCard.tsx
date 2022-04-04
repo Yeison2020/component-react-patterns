@@ -1,10 +1,12 @@
 import styles from "../styles/styles.module.css";
 import noImage from "../assets/no-image.jpg";
 import { useProducts } from "../hooks/useProducts";
+import { Children, ReactElement } from "react";
 
 // Implementing my Types:
 interface Props {
   product: Product;
+  children?: ReactElement;
 }
 interface Product {
   id: string;
@@ -56,7 +58,7 @@ export const ProductButtons = ({
 
 // Main Component with integrated Components
 
-const ProductCard = ({ product }: Props) => {
+const ProductCard = ({ children, product }: Props) => {
   // Customs Hooks Imports
   const { counter, increaseBy } = useProducts();
 
@@ -64,12 +66,12 @@ const ProductCard = ({ product }: Props) => {
   // console.log(styles);
   return (
     <div className={styles.productCard}>
+      {Children}
       {/* Because I put the Image inside of the public foler I was abale to fecth just like this ==>  */}
-
-      {/* Please Learn this is The best way to implement Them */}
+      {/* 
       <ProductImage img={product.img} />
       <ProductTitle title={product.title} />
-      <ProductButtons counter={counter} increaseBy={increaseBy} />
+      <ProductButtons counter={counter} increaseBy={increaseBy} /> */}
     </div>
   );
 };

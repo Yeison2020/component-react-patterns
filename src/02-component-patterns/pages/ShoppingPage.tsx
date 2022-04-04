@@ -14,7 +14,11 @@ const ShoppingPage = () => {
       <hr />
 
       <div style={{ display: "flex", flexDirection: "row", flexWrap: "wrap" }}>
-        <ProductCard product={products} />
+        <ProductCard product={products}>
+          {/* <ProductImage/> */}
+          {/* <ProductTitle/> */}
+          {/* <ProductButtons/> */}
+        </ProductCard>
       </div>
     </div>
   );

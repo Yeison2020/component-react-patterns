@@ -11,6 +11,16 @@ interface Product {
   title: string;
   img?: string;
 }
+
+export const ProductImage = ({ img = "" }) => {
+  return (
+    <img
+      className={styles.productImg}
+      src={img ? img : noImage}
+      alt="coffee Mug"
+    />
+  );
+};
 const ProductCard = ({ product }: Props) => {
   // Customs Hooks Imports
   const { counter, increaseBy } = useProducts();
@@ -20,11 +30,8 @@ const ProductCard = ({ product }: Props) => {
   return (
     <div className={styles.productCard}>
       {/* Because I put the Image inside of the public foler I was abale to fecth just like this ==>  */}
-      <img
-        className={styles.productImg}
-        src={product.img ? product.img : noImage}
-        alt="coffee Mug"
-      />
+      <ProductImage img={product.img} />
+
       <span className={styles.productDescription}>{product.title}</span>
       <div className={styles.buttonsContainer}>
         <button className={styles.buttonMinus} onClick={() => increaseBy(-1)}>

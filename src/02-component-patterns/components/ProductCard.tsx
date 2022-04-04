@@ -6,7 +6,7 @@ import { Children, ReactElement } from "react";
 // Implementing my Types:
 interface Props {
   product: Product;
-  children?: ReactElement;
+  children?: ReactElement | ReactElement[];
 }
 interface Product {
   id: string;
@@ -66,7 +66,7 @@ const ProductCard = ({ children, product }: Props) => {
   // console.log(styles);
   return (
     <div className={styles.productCard}>
-      {Children}
+      {children}
       {/* Because I put the Image inside of the public foler I was abale to fecth just like this ==>  */}
       {/* 
       <ProductImage img={product.img} />

@@ -15,6 +15,7 @@ const ShoppingPage = () => {
 
       <div style={{ display: "flex", flexDirection: "row", flexWrap: "wrap" }}>
         <ProductCard product={products}>
+          <h1>Hola Mundo</h1>
           {/* <ProductImage/> */}
           {/* <ProductTitle/> */}
           {/* <ProductButtons/> */}

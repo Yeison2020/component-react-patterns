@@ -11,6 +11,9 @@ interface Product {
   title: string;
   img?: string;
 }
+// Small block Components
+
+// Product Image
 
 export const ProductImage = ({ img = "" }) => {
   return (
@@ -22,10 +25,13 @@ export const ProductImage = ({ img = "" }) => {
   );
 };
 
+// Product Title
+
 export const ProductTitle = ({ title }: { title: string }) => {
   return <span className={styles.productDescription}>{title}</span>;
 };
 
+// Product Buttons
 interface ProductButtonsProps {
   counter: number;
   increaseBy: (value: number) => void;
@@ -47,6 +53,9 @@ export const ProductButtons = ({
     </div>
   );
 };
+
+// Main Component with integrated Components
+
 const ProductCard = ({ product }: Props) => {
   // Customs Hooks Imports
   const { counter, increaseBy } = useProducts();

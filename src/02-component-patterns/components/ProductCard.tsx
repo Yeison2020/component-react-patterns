@@ -15,10 +15,11 @@ interface Product {
 }
 // Context API
 // Check this out how important It is
+// This's been using in the provider
 interface ProductContextProps {
   counter: number;
   increaseBy: (value: number) => void;
-  product: {};
+  product: Product;
 }
 
 const ProductContext = createContext({} as ProductContextProps);

@@ -1,33 +1,14 @@
 import styles from "../styles/styles.module.css";
-import noImage from "../assets/no-image.jpg";
 import { useProducts } from "../hooks/useProducts";
 import { createContext, useContext } from "react";
 import { ProductContextProps, Props } from "../interfaces/interfaces";
+import { ProductImage } from "./ProductImage";
 
-const ProductContext = createContext({} as ProductContextProps);
+export const ProductContext = createContext({} as ProductContextProps);
 const { Provider } = ProductContext;
 // Small block Components
 
 // Product Image
-
-// Remember I replaced those using the context of the provider
-export const ProductImage = ({ img = "" }) => {
-  const { product } = useContext(ProductContext);
-
-  // Checkout Tomorrow IMPORTANT
-
-  // I needed to do it this way, because I needed to evualate three elements
-  // 1. img , 2. product.img, 3. noImage
-  let imgToShow: string;
-  if (img) {
-    imgToShow = img;
-  } else if (product.img) {
-    imgToShow = product.img;
-  } else {
-    imgToShow = noImage;
-  }
-  return <img className={styles.productImg} src={imgToShow} alt="coffee Mug" />;
-};
 
 // Product Title
 

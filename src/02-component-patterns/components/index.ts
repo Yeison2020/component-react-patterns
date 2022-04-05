@@ -1,4 +1,5 @@
 import { ProductCard as ProductCardHOC } from "./ProductCard";
+import { ProductCardMainPropsHOC } from "../interfaces/interfaces";
 
 // Importadas
 import { ProductTitle } from "./ProductTitle";
@@ -12,10 +13,13 @@ export { ProductTitle } from "./ProductTitle";
 // export { ProductCard } from "./ProductCard";
 
 // When Adding Object,assign is creating a Component from HOC and extending the component with those other components
-export const ProductCard = Object.assign(ProductCardHOC, {
-  Title: ProductTitle,
-  Image: ProductImage,
-  Buttons: ProductButtons,
-});
+export const ProductCard: ProductCardMainPropsHOC = Object.assign(
+  ProductCardHOC,
+  {
+    Title: ProductTitle,
+    Image: ProductImage,
+    Buttons: ProductButtons,
+  }
+);
 
 export default ProductCard;

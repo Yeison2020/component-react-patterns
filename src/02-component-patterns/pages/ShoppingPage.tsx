@@ -28,7 +28,7 @@ const ShoppingPage = () => {
         <div>
           <ProductCard product={products}>
             <ProductImage />
-            <ProductTitle title="Cafe con Leche Regulars Component" />
+            <ProductTitle title="Cafe con Leche Regulars" />
             <ProductButtons />
           </ProductCard>
         </div>

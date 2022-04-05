@@ -18,7 +18,14 @@ export interface ProductContextProps {
   product: Product;
 }
 
-interface ProductButtonsProps {
+export interface ProductButtonsProps {
   counter: number;
   increaseBy: (value: number) => void;
+}
+
+export interface ProductCardMainPropsHOC {
+  ({ children, product }: ProductCardProps): JSX.Element;
+  Title: ({ title }: { title?: string }) => JSX.Element;
+  Image: ({ img }: { img?: string }) => JSX.Element;
+  Buttons: () => JSX.Element;
 }

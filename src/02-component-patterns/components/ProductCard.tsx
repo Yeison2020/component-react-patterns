@@ -1,26 +1,8 @@
 import styles from "../styles/styles.module.css";
 import noImage from "../assets/no-image.jpg";
 import { useProducts } from "../hooks/useProducts";
-import { createContext, ReactElement, useContext } from "react";
-
-// Implementing my Types:
-interface Props {
-  product: Product;
-  children?: ReactElement | ReactElement[];
-}
-interface Product {
-  id: string;
-  title: string;
-  img?: string;
-}
-// Context API
-// Check this out how important It is
-// This's been using in the provider
-interface ProductContextProps {
-  counter: number;
-  increaseBy: (value: number) => void;
-  product: Product;
-}
+import { createContext, useContext } from "react";
+import { ProductContextProps, Props } from "../interfaces/interfaces";
 
 const ProductContext = createContext({} as ProductContextProps);
 const { Provider } = ProductContext;
@@ -62,10 +44,6 @@ export const ProductTitle = ({ title }: { title?: string }) => {
 // Product Buttons
 
 // Remember I replaced those using the context of the provider
-interface ProductButtonsProps {
-  counter: number;
-  increaseBy: (value: number) => void;
-}
 
 export const ProductButtons = () => {
   const context = useContext(ProductContext);

@@ -20,15 +20,15 @@ const ShoppingPage = () => {
       <div style={{ display: "flex", flexDirection: "row", flexWrap: "wrap" }}>
         <div>
           <ProductCard product={products}>
-            <ProductImage />
-            <ProductTitle />
-            <ProductButtons />
+            <ProductCard.Image />
+            <ProductCard.Title title="Caramel Object nested Coffee" />
+            <ProductCard.Buttons />
           </ProductCard>
         </div>
         <div>
           <ProductCard product={products}>
             <ProductImage />
-            <ProductTitle title="Cafe con Leche" />
+            <ProductTitle title="Cafe con Leche Regulars Component" />
             <ProductButtons />
           </ProductCard>
         </div>

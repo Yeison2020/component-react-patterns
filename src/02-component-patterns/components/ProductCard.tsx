@@ -14,8 +14,14 @@ interface Product {
   img?: string;
 }
 // Context API
+// Check this out how important It is
+interface ProductContextProps {
+  counter: number;
+  increaseBy: (value: number) => void;
+  product: {};
+}
 
-const ProductContext = createContext({});
+const ProductContext = createContext({} as ProductContextProps);
 const { Provider } = ProductContext;
 // Small block Components
 

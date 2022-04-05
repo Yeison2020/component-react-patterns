@@ -16,6 +16,7 @@ interface Product {
 // Context API
 
 const ProductContext = createContext({});
+const { Provider } = ProductContext;
 // Small block Components
 
 // Product Image
@@ -68,14 +69,22 @@ const ProductCard = ({ children, product }: Props) => {
   //
   // console.log(styles);
   return (
-    <div className={styles.productCard}>
-      {children}
-      {/* Because I put the Image inside of the public foler I was abale to fecth just like this ==>  */}
-      {/* 
+    <Provider
+      value={{
+        counter,
+        increaseBy,
+        product,
+      }}
+    >
+      <div className={styles.productCard}>
+        {children}
+        {/* Because I put the Image inside of the public foler I was abale to fecth just like this ==>  */}
+        {/* 
       <ProductImage img={product.img} />
       <ProductTitle title={product.title} />
       <ProductButtons counter={counter} increaseBy={increaseBy} /> */}
-    </div>
+      </div>
+    </Provider>
   );
 };
 // Attaching Components

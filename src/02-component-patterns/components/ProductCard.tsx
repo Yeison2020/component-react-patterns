@@ -1,7 +1,7 @@
 import styles from "../styles/styles.module.css";
 import noImage from "../assets/no-image.jpg";
 import { useProducts } from "../hooks/useProducts";
-import { Children, ReactElement } from "react";
+import { ReactElement } from "react";
 
 // Implementing my Types:
 interface Props {

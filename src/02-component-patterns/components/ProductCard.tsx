@@ -76,4 +76,8 @@ const ProductCard = ({ children, product }: Props) => {
   );
 };
 
+ProductCard.Title = ProductTitle;
+ProductCard.Image = ProductImage;
+ProductCard.buttons = ProductButtons;
+
 export default ProductCard;

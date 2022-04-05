@@ -20,7 +20,7 @@ const ShoppingPage = () => {
         <ProductCard product={products}>
           <ProductImage />
           <ProductTitle title={""} />
-          {/* <ProductButtons/> */}
+          {/* <ProductButtons /> */}
         </ProductCard>
       </div>
     </div>

@@ -15,24 +15,18 @@ const ShoppingPage = () => {
 
       <div style={{ display: "flex", flexDirection: "row", flexWrap: "wrap" }}>
         <div>
-          {" "}
           <ProductCard product={products}>
-            <ProductCard product={products}>
-              <ProductCard.Image />
-              <ProductCard.Title />
-              <ProductCard.Buttons />
-            </ProductCard>
+            <ProductCard.Image />
+            <ProductCard.Title />
+            <ProductCard.Buttons />
           </ProductCard>
         </div>
         <div>
           <ProductCard product={products}>
-            <ProductCard product={products}>
-              <ProductCard.Image />
-
-              {/* Here The title It's been passed and It changes the component Property */}
-              <ProductCard.Title title="Cafe con Leche" />
-              <ProductCard.Buttons />
-            </ProductCard>
+            <ProductCard.Image />
+            {/* Here The title It's been passed and It changes the component Property */}
+            <ProductCard.Title title="Cafe con Leche" />
+            <ProductCard.Buttons />
           </ProductCard>
         </div>
       </div>

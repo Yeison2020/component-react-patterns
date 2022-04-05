@@ -5,13 +5,10 @@ import {
   ProductContextProps,
   ProductCardProps,
 } from "../interfaces/interfaces";
-import { ProductImage } from "./ProductImage";
-import { ProductTitle } from "./ProductTitle";
-import { ProductButtons } from "./ProductButtons ";
 export const ProductContext = createContext({} as ProductContextProps);
 const { Provider } = ProductContext;
 // Main Component with integrated Components
-const ProductCard = ({ children, product }: ProductCardProps) => {
+export const ProductCard = ({ children, product }: ProductCardProps) => {
   // Customs Hooks Imports
   const { counter, increaseBy } = useProducts();
   return (
@@ -27,9 +24,3 @@ const ProductCard = ({ children, product }: ProductCardProps) => {
     </Provider>
   );
 };
-// Attaching Components
-ProductCard.Title = ProductTitle;
-ProductCard.Image = ProductImage;
-ProductCard.Buttons = ProductButtons;
-
-export default ProductCard;

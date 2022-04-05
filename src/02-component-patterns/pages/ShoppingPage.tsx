@@ -17,8 +17,8 @@ const ShoppingPage = () => {
         <ProductCard product={products}>
           <ProductCard product={products}>
             <ProductCard.Image />
-            <ProductCard.Title title={"Caffee Lover"} />
-            <ProductCard.buttons />
+            <ProductCard.Title />
+            <ProductCard.Buttons />
           </ProductCard>
         </ProductCard>
       </div>

@@ -40,11 +40,16 @@ export const ProductImage = ({ img = "" }) => {
 
 // Product Title
 
-export const ProductTitle = ({ title }: { title: string }) => {
-  return <span className={styles.productDescription}>{title}</span>;
+export const ProductTitle = () => {
+  const context = useContext(ProductContext);
+  return (
+    <span className={styles.productDescription}>{context.product.title}</span>
+  );
 };
 
 // Product Buttons
+
+// Remember I replaced those using the context of the provider
 interface ProductButtonsProps {
   counter: number;
   increaseBy: (value: number) => void;
@@ -102,6 +107,6 @@ const ProductCard = ({ children, product }: Props) => {
 // Attaching Components
 ProductCard.Title = ProductTitle;
 ProductCard.Image = ProductImage;
-ProductCard.buttons = ProductButtons;
+ProductCard.Buttons = ProductButtons;
 
 export default ProductCard;

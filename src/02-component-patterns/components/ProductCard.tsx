@@ -46,11 +46,18 @@ export const ProductImage = ({ img = "" }) => {
 
 // Product Title
 
-export const ProductTitle = () => {
-  const context = useContext(ProductContext);
-  return (
-    <span className={styles.productDescription}>{context.product.title}</span>
-  );
+export const ProductTitle = ({ title = "" }) => {
+  const { product } = useContext(ProductContext);
+  let titleValue: string;
+  if (title) {
+    titleValue = title;
+  } else if (product.title) {
+    titleValue = product.title;
+  } else {
+    titleValue = "";
+  }
+
+  return <span className={styles.productDescription}>{titleValue}</span>;
 };
 
 // Product Buttons

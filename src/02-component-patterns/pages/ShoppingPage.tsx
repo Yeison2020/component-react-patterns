@@ -28,7 +28,9 @@ const ShoppingPage = () => {
           <ProductCard product={products}>
             <ProductCard product={products}>
               <ProductCard.Image />
-              <ProductCard.Title />
+
+              {/* Here The title It's been passed and It changes the component Property */}
+              <ProductCard.Title title="Cafe con Leche" />
               <ProductCard.Buttons />
             </ProductCard>
           </ProductCard>

@@ -1,8 +1,5 @@
 import React from "react";
-import ProductCard, {
-  ProductImage,
-  ProductTitle,
-} from "../components/ProductCard";
+import ProductCard from "../components/ProductCard";
 const products = {
   id: "1",
   title: "Coffee Mug Card",

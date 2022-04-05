@@ -29,15 +29,19 @@ const { Provider } = ProductContext;
 // Product Image
 
 // Remember I replaced those using the context of the provider
-export const ProductImage = () => {
-  const context = useContext(ProductContext);
-  return (
-    <img
-      className={styles.productImg}
-      src={context.product.img ? context.product.img : noImage}
-      alt="coffee Mug"
-    />
-  );
+export const ProductImage = ({ img = "" }) => {
+  const { product } = useContext(ProductContext);
+
+  // Checkout Tomorrow IMPORTANT
+  let imgToShow: string;
+  if (img) {
+    imgToShow = img;
+  } else if (product.img) {
+    imgToShow = product.img;
+  } else {
+    imgToShow = noImage;
+  }
+  return <img className={styles.productImg} src={imgToShow} alt="coffee Mug" />;
 };
 
 // Product Title

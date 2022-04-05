@@ -75,7 +75,7 @@ const ProductCard = ({ children, product }: Props) => {
     </div>
   );
 };
-
+// Attaching Components
 ProductCard.Title = ProductTitle;
 ProductCard.Image = ProductImage;
 ProductCard.buttons = ProductButtons;

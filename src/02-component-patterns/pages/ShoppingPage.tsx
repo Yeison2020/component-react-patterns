@@ -18,9 +18,9 @@ const ShoppingPage = () => {
 
       <div style={{ display: "flex", flexDirection: "row", flexWrap: "wrap" }}>
         <ProductCard product={products}>
-          <ProductImage />
-          <ProductTitle title={""} />
-          {/* <ProductButtons /> */}
+          <ProductCard.Image />
+          <ProductCard.Title title={"Enmanuel"} />
+          {/* <ProductCard.buttons /> */}
         </ProductCard>
       </div>
     </div>

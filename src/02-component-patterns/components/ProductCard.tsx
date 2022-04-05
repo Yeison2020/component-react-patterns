@@ -105,14 +105,8 @@ const ProductCard = ({ children, product }: Props) => {
         product,
       }}
     >
-      <div className={styles.productCard}>
-        {children}
-        {/* Because I put the Image inside of the public foler I was abale to fecth just like this ==>  */}
-        {/* 
-      <ProductImage img={product.img} />
-      <ProductTitle title={product.title} />
-      <ProductButtons counter={counter} increaseBy={increaseBy} /> */}
-      </div>
+      {/* Childrens Mini Components ==>  */}
+      <div className={styles.productCard}>{children}</div>
     </Provider>
   );
 };

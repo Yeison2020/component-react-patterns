@@ -1,7 +1,7 @@
 import styles from "../styles/styles.module.css";
 import noImage from "../assets/no-image.jpg";
 import { useProducts } from "../hooks/useProducts";
-import { createContext, ReactElement } from "react";
+import { createContext, ReactElement, useContext } from "react";
 
 // Implementing my Types:
 interface Props {
@@ -50,17 +50,22 @@ interface ProductButtonsProps {
   increaseBy: (value: number) => void;
 }
 
-export const ProductButtons = ({
-  counter,
-  increaseBy,
-}: ProductButtonsProps) => {
+export const ProductButtons = () => {
+  const context = useContext(ProductContext);
+  console.log(context);
   return (
     <div className={styles.buttonsContainer}>
-      <button className={styles.buttonMinus} onClick={() => increaseBy(-1)}>
+      <button
+        className={styles.buttonMinus}
+        onClick={() => context.increaseBy(-1)}
+      >
         -
       </button>
-      <div className={styles.countLabel}> {counter} </div>
-      <button className={styles.buttonAdd} onClick={() => increaseBy(+1)}>
+      <div className={styles.countLabel}> {context.counter} </div>
+      <button
+        className={styles.buttonAdd}
+        onClick={() => context.increaseBy(+1)}
+      >
         +
       </button>
     </div>

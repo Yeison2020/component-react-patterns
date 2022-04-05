@@ -33,6 +33,9 @@ export const ProductImage = ({ img = "" }) => {
   const { product } = useContext(ProductContext);
 
   // Checkout Tomorrow IMPORTANT
+
+  // I needed to do it this way, because I needed to evualate three elements
+  // 1. img , 2. product.img, 3. noImage
   let imgToShow: string;
   if (img) {
     imgToShow = img;
@@ -48,16 +51,12 @@ export const ProductImage = ({ img = "" }) => {
 
 export const ProductTitle = ({ title = "" }) => {
   const { product } = useContext(ProductContext);
-  let titleValue: string;
-  if (title) {
-    titleValue = title;
-  } else if (product.title) {
-    titleValue = product.title;
-  } else {
-    titleValue = "";
-  }
 
-  return <span className={styles.productDescription}>{titleValue}</span>;
+  return (
+    <span className={styles.productDescription}>
+      {title ? title : product.title}
+    </span>
+  );
 };
 
 // Product Buttons

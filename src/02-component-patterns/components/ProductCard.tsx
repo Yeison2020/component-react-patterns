@@ -1,7 +1,7 @@
 import styles from "../styles/styles.module.css";
 import noImage from "../assets/no-image.jpg";
 import { useProducts } from "../hooks/useProducts";
-import { ReactElement } from "react";
+import { createContext, ReactElement } from "react";
 
 // Implementing my Types:
 interface Props {
@@ -13,6 +13,9 @@ interface Product {
   title: string;
   img?: string;
 }
+// Context API
+
+const ProductContext = createContext({});
 // Small block Components
 
 // Product Image
